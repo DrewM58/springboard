@@ -22,3 +22,7 @@ titanic_original <- titanic_original %>%  replace_na(list(boat = "None"), boat)
 # Create new column to show if passenger has_cabin_number (1), or not (0)
 
 titanic_original <- titanic_original %>% mutate(has_cabin_number = ifelse(is.na(cabin), 0, 1))
+
+# Save cleaned data as CSV 
+
+write_csv(titanic_original, "titanic_clean.csv")
